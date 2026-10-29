@@ -1,0 +1,3 @@
+# Project Abstract
+
+ZONEZAP (DEAD ZONE KILLER, DZK-1) is a prototype concept for supporting short emergency messages when conventional communication infrastructure is unavailable. The proposed architecture uses ESP32-based nodes and LoRa radio links, with an elevated balloon relay concept intended to improve line-of-sight coverage. A ground-station dashboard presents telemetry and mission status. The repository provides a documented architecture, reference firmware, a demo dashboard, hardware planning templates, and a repeatable test protocol. Performance must be established through controlled experiments; the included demo telemetry is simulated and should not be presented as measured evidence.

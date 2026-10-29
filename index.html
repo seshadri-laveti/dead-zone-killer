@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06132f">
+<title>ZONEZAP | DEAD ZONE KILLER Ground Station</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="../media/images/zonezap_logo.png" alt="ZoneZap logo"><div><strong>ZONEZAP</strong><span>DEAD ZONE KILLER · GROUND STATION</span></div></div>
+  <div class="statusline"><span class="dot"></span><span id="mode">DEMO MODE</span><button id="toggleDemo">PAUSE DEMO</button></div>
+</header>
+<main>
+  <section class="hero"><div><p class="eyebrow">EMERGENCY COMMUNICATION · DZK-1</p><h1>Ground Station <em>Telemetry</em></h1><p class="muted">Offline-first dashboard prototype for LoRa relay telemetry.</p></div><div class="pill">SYSTEM <b id="systemStatus">NOMINAL</b></div></section>
+  <section class="metrics">
+    <article class="metric"><span>LINK RSSI</span><strong id="rssi">— dBm</strong><small id="linkQuality">Waiting for packet</small></article>
+    <article class="metric"><span>BATTERY</span><strong id="battery">—%</strong><small>Relay power status</small></article>
+    <article class="metric"><span>TEMPERATURE</span><strong id="temperature">— °C</strong><small>Payload sensor (if fitted)</small></article>
+    <article class="metric"><span>PACKETS</span><strong id="packets">0</strong><small>Telemetry packets seen</small></article>
+  </section>
+  <section class="grid">
+    <article class="panel map-panel"><div class="panel-head"><h2>Mission Position</h2><span class="tag">DEMO / GPS</span></div><div class="map" id="map"><div class="mapgrid"></div><div class="crosshair">⌖</div><div class="map-label">GPS COORDINATES <b id="coords">No GPS fix</b></div><div class="radar"><i></i><i></i><i></i></div></div><div class="map-foot"><span>Latitude <b id="lat">—</b></span><span>Longitude <b id="lon">—</b></span></div></article>
+    <article class="panel"><div class="panel-head"><h2>Critical Logs & Alerts</h2><span class="tag">LIVE FEED</span></div><div class="alerts" id="alerts"><div class="empty">No alerts received.</div></div></article>
+    <article class="panel"><div class="panel-head"><h2>Emergency Response Center</h2><span class="tag">MISSION</span></div><div class="mission-grid"><div><small>MISSION STATUS</small><b id="mission">SEARCH</b></div><div><small>LINK SIGNAL</small><b id="signal">UNKNOWN</b></div><div><small>ALERT LEVEL</small><b id="alertLevel">NORMAL</b></div><div><small>RECEIVED NODE</small><b id="node">—</b></div></div></article>
+    <article class="panel"><div class="panel-head"><h2>Raw Serial Terminal / JSON Lines</h2><span class="tag">115200 BAUD*</span></div><div class="terminal" id="terminal"><span class="terminal-dim">Demo telemetry will appear here. One JSON object per line is accepted below.</span></div><form id="packetForm"><input id="packetInput" aria-label="JSON packet" placeholder='Paste JSON packet, e.g. {"type":"telemetry","rssi":-68}'><button>INGEST</button></form><p class="note">* Set your serial bridge to 115200 baud. This static page does not directly access USB serial on every browser. A Web Serial adapter can be added for supported Chromium browsers.</p></article>
+  </section>
+</main>
+<footer>ZONEZAP / DZK-1 · Prototype interface · Demo values are simulated, not measured results.</footer>
+<script src="app.js"></script>
+</body></html>
